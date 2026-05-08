@@ -1,26 +1,113 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0f0e17;
+  color: #ffffff;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+/* Thin sidebar scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.3);
+  border-radius: 2px;
+}
+
+/* Dense table defaults */
+.hs-table th {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #94a3b8;
+  background: #13122a;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #2a2850;
+  white-space: nowrap;
+}
+
+.hs-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #2a2850;
+  color: rgba(255, 255, 255, 0.85);
+  vertical-align: middle;
+  font-size: 15px;
+}
+
+.hs-table tr:hover td {
+  background-color: rgba(124, 58, 237, 0.06);
+}
+
+.hs-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Card / panel base */
+.hs-card {
+  background: #1a1933;
+  border: 1px solid #2a2850;
+  border-radius: 12px;
+}
+
+/* Stat card accent line */
+.stat-card-accent {
+  border-top: 3px solid #7c3aed;
+}
+
+/* Purple glow utility */
+.hs-glow {
+  box-shadow: 0 0 24px rgba(124, 58, 237, 0.25);
+}
+
+/* Gradient button base */
+.hs-btn-gradient {
+  background: linear-gradient(135deg, #7c3aed, #3b82f6);
+  border-radius: 8px;
+  color: #ffffff;
+  border: none;
+}
+
+/* ── Landing page animations ──────────────────────────────── */
+@keyframes hsfadeIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes hsPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+.hs-fade-in {
+  animation: hsfadeIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hs-fade-in-1 { animation-delay: 0.05s; }
+.hs-fade-in-2 { animation-delay: 0.18s; }
+.hs-fade-in-3 { animation-delay: 0.30s; }
+.hs-fade-in-4 { animation-delay: 0.44s; }
