@@ -245,7 +245,6 @@ export function Sidebar({ role }: { role: 'manager' | 'candidate' }) {
           onClick={toggleSidebar}
           className="w-full flex items-center justify-center h-9 transition-all"
           style={{
-            borderTop: '1px solid #2a2850',
             color: '#94a3b8',
             background: 'none',
             cursor: 'pointer',

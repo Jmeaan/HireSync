@@ -139,7 +139,6 @@ export function ApplicantPipeline({ jobId }: { jobId: string }) {
                 className="flex-1 min-w-max text-center py-3 px-3 transition-all"
                 style={{
                   background: active ? 'rgba(124,58,237,0.2)' : 'transparent',
-                  borderRight: i < 8 ? '1px solid #2a2850' : 'none',
                   cursor: 'pointer',
                   border: 'none',
                   borderRight: i < 8 ? '1px solid #2a2850' : 'none',
